@@ -7,7 +7,7 @@ import (
 	. "github.com/go-playground/assert/v2"
 	indonesia "github.com/go-playground/locales/id"
 	ut "github.com/go-playground/universal-translator"
-	"github.com/go-playground/validator/v10"
+	"github.com/nobidev/validator/v10"
 )
 
 func TestTranslations(t *testing.T) {
@@ -140,7 +140,7 @@ func TestTranslations(t *testing.T) {
 		StrPtrGte         *string   `validate:"gte=10"`
 		OneOfString       string    `validate:"oneof=merah hijau"`
 		OneOfInt          int       `validate:"oneof=5 63"`
-		Image			  string			`validate:"image"`
+		Image             string    `validate:"image"`
 	}
 
 	var test Test
@@ -626,7 +626,7 @@ func TestTranslations(t *testing.T) {
 			expected: "OneOfInt harus berupa salah satu dari [5 63]",
 		},
 		{
-			ns: "Test.Image",
+			ns:       "Test.Image",
 			expected: "Image harus berupa gambar yang valid",
 		},
 	}

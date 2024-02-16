@@ -4,8 +4,8 @@ Package validator
 ![Project status](https://img.shields.io/badge/version-10.18.0-green.svg)
 [![Build Status](https://travis-ci.org/go-playground/validator.svg?branch=master)](https://travis-ci.org/go-playground/validator)
 [![Coverage Status](https://coveralls.io/repos/go-playground/validator/badge.svg?branch=master&service=github)](https://coveralls.io/github/go-playground/validator?branch=master)
-[![Go Report Card](https://goreportcard.com/badge/github.com/go-playground/validator)](https://goreportcard.com/report/github.com/go-playground/validator)
-[![GoDoc](https://godoc.org/github.com/go-playground/validator?status.svg)](https://pkg.go.dev/github.com/go-playground/validator/v10)
+[![Go Report Card](https://goreportcard.com/badge/github.com/nobidev/validator)](https://goreportcard.com/report/github.com/nobidev/validator)
+[![GoDoc](https://godoc.org/github.com/nobidev/validator?status.svg)](https://pkg.go.dev/github.com/nobidev/validator/v10)
 ![License](https://img.shields.io/dub/l/vibe-d.svg)
 
 Package validator implements value validations for structs and individual fields based on tags.
@@ -20,18 +20,18 @@ It has the following **unique** features:
 -   Alias validation tags, which allows for mapping of several validations to a single tag for easier defining of validations on structs
 -   Extraction of custom defined Field Name e.g. can specify to extract the JSON name while validating and have it available in the resulting FieldError
 -   Customizable i18n aware error messages.
--   Default validator for the [gin](https://github.com/gin-gonic/gin) web framework; upgrading from v8 to v9 in gin see [here](https://github.com/go-playground/validator/tree/master/_examples/gin-upgrading-overriding)
+-   Default validator for the [gin](https://github.com/gin-gonic/gin) web framework; upgrading from v8 to v9 in gin see [here](https://github.com/nobidev/validator/tree/master/_examples/gin-upgrading-overriding)
 
 Installation
 ------------
 
 Use go get.
 
-	go get github.com/go-playground/validator/v10
+	go get github.com/nobidev/validator/v10
 
 Then import the validator package into your own code.
 
-	import "github.com/go-playground/validator/v10"
+	import "github.com/nobidev/validator/v10"
 
 Error Return Value
 -------
@@ -41,7 +41,7 @@ Validation functions return type error
 They return type error to avoid the issue discussed in the following, where err is always != nil:
 
 * http://stackoverflow.com/a/29138676/3158232
-* https://github.com/go-playground/validator/issues/134
+* https://github.com/nobidev/validator/issues/134
 
 Validator returns only InvalidValidationError for bad validation input, nil or ValidationErrors as type error; so, in your code all you need to do is check if the error returned is not nil, and if it's not check if error is InvalidValidationError ( if necessary, most of the time it isn't ) type cast it to type ValidationErrors like so:
 
@@ -53,15 +53,15 @@ validationErrors := err.(validator.ValidationErrors)
 Usage and documentation
 ------
 
-Please see https://pkg.go.dev/github.com/go-playground/validator/v10 for detailed usage docs.
+Please see https://pkg.go.dev/github.com/nobidev/validator/v10 for detailed usage docs.
 
 ##### Examples:
 
-- [Simple](https://github.com/go-playground/validator/blob/master/_examples/simple/main.go)
-- [Custom Field Types](https://github.com/go-playground/validator/blob/master/_examples/custom/main.go)
-- [Struct Level](https://github.com/go-playground/validator/blob/master/_examples/struct-level/main.go)
-- [Translations & Custom Errors](https://github.com/go-playground/validator/blob/master/_examples/translations/main.go)
-- [Gin upgrade and/or override validator](https://github.com/go-playground/validator/tree/v9/_examples/gin-upgrading-overriding)
+- [Simple](https://github.com/nobidev/validator/blob/master/_examples/simple/main.go)
+- [Custom Field Types](https://github.com/nobidev/validator/blob/master/_examples/custom/main.go)
+- [Struct Level](https://github.com/nobidev/validator/blob/master/_examples/struct-level/main.go)
+- [Translations & Custom Errors](https://github.com/nobidev/validator/blob/master/_examples/translations/main.go)
+- [Gin upgrade and/or override validator](https://github.com/nobidev/validator/tree/v9/_examples/gin-upgrading-overriding)
 - [wash - an example application putting it all together](https://github.com/bluesuncorp/wash)
 
 Baked-in Validations
@@ -270,7 +270,7 @@ Benchmarks
 go version go1.21.0 darwin/arm64
 goos: darwin
 goarch: arm64
-pkg: github.com/go-playground/validator/v10
+pkg: github.com/nobidev/validator/v10
 BenchmarkFieldSuccess-8                                         33142266                35.94 ns/op            0 B/op          0 allocs/op
 BenchmarkFieldSuccessParallel-8                                 200816191                6.568 ns/op           0 B/op          0 allocs/op
 BenchmarkFieldFailure-8                                          6779707               175.1 ns/op           200 B/op          4 allocs/op

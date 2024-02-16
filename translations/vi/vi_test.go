@@ -7,7 +7,7 @@ import (
 	. "github.com/go-playground/assert/v2"
 	vietnamese "github.com/go-playground/locales/vi"
 	ut "github.com/go-playground/universal-translator"
-	"github.com/go-playground/validator/v10"
+	"github.com/nobidev/validator/v10"
 )
 
 func TestTranslations(t *testing.T) {
@@ -149,7 +149,7 @@ func TestTranslations(t *testing.T) {
 		PostCode          string            `validate:"postcode_iso3166_alpha2=SG"`
 		PostCodeCountry   string
 		PostCodeByField   string `validate:"postcode_iso3166_alpha2_field=PostCodeCountry"`
-		Image			  string			`validate:"image"`
+		Image             string `validate:"image"`
 	}
 
 	var test Test
@@ -678,7 +678,7 @@ func TestTranslations(t *testing.T) {
 			expected: "PostCodeByField sai định dạng postcode của quốc gia tương ứng thuộc trường PostCodeCountry",
 		},
 		{
-			ns: "Test.Image",
+			ns:       "Test.Image",
 			expected: "Image phải là một hình ảnh hợp lệ",
 		},
 	}

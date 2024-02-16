@@ -9261,7 +9261,7 @@ func TestMutipleRecursiveExtractStructCache(t *testing.T) {
 	close(proceed)
 }
 
-// Thanks @robbrockbank, see https://github.com/go-playground/validator/issues/249
+// Thanks @robbrockbank, see https://github.com/nobidev/validator/issues/249
 func TestPointerAndOmitEmpty(t *testing.T) {
 	validate := New()
 

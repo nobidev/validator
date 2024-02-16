@@ -7,7 +7,7 @@ import (
 	. "github.com/go-playground/assert/v2"
 	turkish "github.com/go-playground/locales/tr"
 	ut "github.com/go-playground/universal-translator"
-	"github.com/go-playground/validator/v10"
+	"github.com/nobidev/validator/v10"
 )
 
 func TestTranslations(t *testing.T) {
@@ -143,7 +143,7 @@ func TestTranslations(t *testing.T) {
 		UniqueSlice       []string          `validate:"unique"`
 		UniqueArray       [3]string         `validate:"unique"`
 		UniqueMap         map[string]string `validate:"unique"`
-		Image			  string			`validate:"image"`
+		Image             string            `validate:"image"`
 	}
 
 	var test Test
@@ -644,7 +644,7 @@ func TestTranslations(t *testing.T) {
 			expected: "UniqueMap benzersiz değerler içermelidir",
 		},
 		{
-			ns: "Test.Image",
+			ns:       "Test.Image",
 			expected: "Image geçerli bir resim olmalıdır",
 		},
 	}

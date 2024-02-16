@@ -9,7 +9,7 @@ import (
 	. "github.com/go-playground/assert/v2"
 	russian "github.com/go-playground/locales/ru"
 	ut "github.com/go-playground/universal-translator"
-	"github.com/go-playground/validator/v10"
+	"github.com/nobidev/validator/v10"
 )
 
 func TestTranslations(t *testing.T) {
@@ -165,7 +165,7 @@ func TestTranslations(t *testing.T) {
 		UniqueSlice             []string          `validate:"unique"`
 		UniqueArray             [3]string         `validate:"unique"`
 		UniqueMap               map[string]string `validate:"unique"`
-		Image			  string			`validate:"image"`
+		Image                   string            `validate:"image"`
 	}
 
 	var test Test
@@ -752,7 +752,7 @@ func TestTranslations(t *testing.T) {
 			expected: "UniqueMap должен содержать уникальные значения",
 		},
 		{
-			ns: "Test.Image",
+			ns:       "Test.Image",
 			expected: "Image должно быть допустимым изображением",
 		},
 	}
